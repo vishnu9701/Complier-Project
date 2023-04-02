@@ -53,8 +53,8 @@ with col2:
             }
         else:
             payload = {
-            'clientId': secrets["clientId"],
-            'clientSecret':secrets["clientSecret"],
+            'clientId': st.secrets["clientId"],
+            'clientSecret':st.secrets["clientSecret"],
             'script': code,
             'language': 'python3',
             'versionIndex': '0',
