@@ -1,7 +1,5 @@
-
-requests
 streamlit
+requests
+json
 streamlit-ace
-toml
-urllib3
-wrapt
+
