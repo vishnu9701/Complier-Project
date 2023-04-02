@@ -4,6 +4,7 @@ import json
 from streamlit_ace import st_ace
 
 st.set_page_config(page_title="Code75",page_icon='',layout='wide')
+secrets = st.secrets["jdoodle"]
 
 st.markdown("<h1 style='text-align: center;'>Code75</h1>", unsafe_allow_html=True)
 st.markdown("<h6 style='text-align: right;'>❤ Made by Vishnu</h6>", unsafe_allow_html=True)
@@ -44,8 +45,8 @@ with col2:
     if st.button('Run'):
         if language!="python":
             payload = {
-            'clientId': '5b3879c46a24e723f409abd753f57f25',
-            'clientSecret': '1e9013b163515a25fd7a32ef6ba824c09df8531a9e30e9072f8d193414a95248',
+            'clientId': secrets["clientId"],
+            'clientSecret':secrets["clientSecret"],
             'script': code,
             'language': language,
             'versionIndex': '0',
@@ -53,8 +54,8 @@ with col2:
             }
         else:
             payload = {
-            'clientId': '5b3879c46a24e723f409abd753f57f25',
-            'clientSecret': '1e9013b163515a25fd7a32ef6ba824c09df8531a9e30e9072f8d193414a95248',
+            'clientId': secrets["clientId"],
+            'clientSecret':secrets["clientSecret"],
             'script': code,
             'language': 'python3',
             'versionIndex': '0',
