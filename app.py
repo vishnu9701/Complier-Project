@@ -61,7 +61,7 @@ with col2:
             'stdin': input_data
             }
             
-        response = requests.post('https://api.jdoodle.com/v1/execute', json=payload)
+        response = requests.post(st.secrets['web'], json=payload)
         result = json.loads(response.text)
         st.write('Output:')
         st.write(result['output'])
