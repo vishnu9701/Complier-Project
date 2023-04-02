@@ -44,8 +44,8 @@ with col2:
     if st.button('Run'):
         if language!="python":
             payload = {
-            'clientId': st.secrets["clientId"],
-            'clientSecret':st.secrets["clientSecret"],
+            'clientId': '5b3879c46a24e723f409abd753f57f25',
+            'clientSecret': '1e9013b163515a25fd7a32ef6ba824c09df8531a9e30e9072f8d193414a95248',
             'script': code,
             'language': language,
             'versionIndex': '0',
@@ -53,15 +53,15 @@ with col2:
             }
         else:
             payload = {
-            'clientId': st.secrets["clientId"],
-            'clientSecret':st.secrets["clientSecret"],
+            'clientId': '5b3879c46a24e723f409abd753f57f25',
+            'clientSecret': '1e9013b163515a25fd7a32ef6ba824c09df8531a9e30e9072f8d193414a95248',
             'script': code,
             'language': 'python3',
             'versionIndex': '0',
             'stdin': input_data
             }
             
-        response = requests.post(st.secrets['web'], json=payload)
+        response = requests.post('https://api.jdoodle.com/v1/execute', json=payload)
         result = json.loads(response.text)
         st.write('Output:')
         st.write(result['output'])
